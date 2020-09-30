@@ -4,14 +4,14 @@ import java.util.Scanner;
 public class lab1 {
     public static void main(String[] args)
     {
-        Scanner scan = new Scanner(System.in); //scanner for input from user 
+        Scanner scan = new Scanner(System.in); //scanner for input from user
         int input; //input from user for Question we want to do
         String toDecode;
-      //  boolean exit = false; //dont want to exit yet  
+      //  boolean exit = false; //dont want to exit yet
         System.out.println("Which Q. did you want to do? (1-4)");
         input = scan.nextInt();
-        
-   //    String test[] = {"hello", "one", "three"}; //used to test method below  
+
+   //    String test[] = {"hello", "one", "three"}; //used to test method below
      //  toDecode = printArray(test);
     //   System.out.println(toDecode);
 
@@ -49,7 +49,7 @@ public class lab1 {
        // cipher sub for #1 and 2
        // then do the bottom 3
        // then go back to #3 and 4
-
+       //ello
        scan.close();
 
    }
@@ -63,7 +63,7 @@ public class lab1 {
         for(int i = 0; i < array.length; i++)
         {
             printedArr = printedArr.concat(array[i]);
-        }        
+        }
 
         return printedArr;
     }

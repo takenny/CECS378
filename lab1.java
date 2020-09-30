@@ -2,6 +2,21 @@ import java.util.Scanner;
 
 
 public class lab1 {
+
+    /*
+    * insert java doc here
+    */
+   public static String printArray(String[] array)
+   {
+       String printedArr = "";
+       for(int i = 0; i < array.length; i++)
+       {
+           printedArr = printedArr.concat(array[i]);
+       }
+
+       return printedArr;
+   }
+   
     public static void main(String[] args)
     {
         Scanner scan = new Scanner(System.in); //scanner for input from user
@@ -53,18 +68,4 @@ public class lab1 {
        scan.close();
 
    }
-
-   /*
-    * insert java doc here
-    */
-   public static String printArray(String[] array)
-    {
-        String printedArr = "";
-        for(int i = 0; i < array.length; i++)
-        {
-            printedArr = printedArr.concat(array[i]);
-        }
-
-        return printedArr;
-    }
 }

@@ -1,3 +1,11 @@
 //TODO: add while loop to iterate back n forth 
 //simple cypher
 //look at other cyphers
+
+
+i look through plaintext and s
+
+
+iterate through each letter of plain text then check if that letter is in the alphabet and if it is, find the index of it is in alphabet 
+then take that index adn look at wghat letter is in the modified alphabet and then replace the letter in the plaintext with the letter of 
+the index of the modified alphabet. 

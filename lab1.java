@@ -17,38 +17,64 @@ public class lab1 {
        return printedArr;
    }
    
-    public static void main(String[] args)
-    {
-        Scanner scan = new Scanner(System.in); //scanner for input from user
-        int input; //input from user for Question we want to do
-        String toDecode;
-      //  boolean exit = false; //dont want to exit yet
-        System.out.println("Which Q. did you want to do? (1-4)");
-        input = scan.nextInt();
+   public static void decode(String msg) {
+       char[] encodedArray = msg.toCharArray();
+       char[] decodeArray = new char[encodedArray.length];
+       int intChar;
+       int a = 97; //ascii of 'a'
+       // this is to get the integer value of the character and store it.
 
-   //    String test[] = {"hello", "one", "three"}; //used to test method below
-     //  toDecode = printArray(test);
-    //   System.out.println(toDecode);
+       for (int i = 0; i < 26; i++) // iterating through the alphabet
+       {
+           for (int k = 0; k < decodeArray.length; k++) // iterating through the array
+           {
+
+               if (encodedArray[k] != ' ') {
+                    intChar = encodedArray[k];
+                    intChar = (intChar - a + i) % 26 + a;
+                    decodeArray[k] = (char)intChar;
+
+               } else {
+                   decodeArray[k] = ' ';
+               }
+           }
+           System.out.println(new String(decodeArray) + "\n");
+       }
+
+   }
+
+   public static void main(String[] args) {
+       Scanner scan = new Scanner(System.in); // scanner for input from user
+       int input; // input from user for Question we want to do
+       String toDecode;
+
+       // boolean exit = false; //dont want to exit yet
+       System.out.println("Which Q. did you want to do? (1-4)");
+       input = scan.nextInt();
+
+       // String test[] = {"hello", "one", "three"}; //used to test method below
+       // toDecode = printArray(test);
+       // System.out.println(toDecode);
 
        switch (input) {
            case 1:
                toDecode = "fqjcb rwjwj vnjax bnkhj whxcq nawjv nfxdu mbvnu ujbbf nnc";
-               System.out.println(toDecode);
+               decode(toDecode);
                break;
 
            case 2:
                toDecode = "oczmz vmzor jocdi bnojv dhvod igdaz admno ojbzo rcvot jprvi oviyv aozmo cvooj ziejt dojig toczr dnzno jahvi fdiyv xcdzq zoczn zxjiy";
-               System.out.println(toDecode);
+               decode(toDecode);
                break;
 
            case 3:
                toDecode = "ejitp spawa qleji taiul rtwll rflrl laoat wsqqj atgac kthls iraoa twlpl qjatw jufrh lhuts qataq itats aittk stqfj cae";
-               System.out.println(toDecode);
+               decode(toDecode);
                break;
 
            case 4:
                toDecode = "iyhqz ewqin azqej shayz niqbe aheum hnmnj jaqii yuexq ayqkn jbeuq iihed yzhni ifnun sayiz yudhe sqshu qesqa iluym qkque aqaqm oejjs hqzyu jdzqa diesh niznj jayzy uiqhq vayzq shsnj jejjz nshna hnmyt isnae sqfun dqzew qiead zevqi zhnjq shqze udqai jrmtq uishq ifnun siiqa suoij qqfni syyle iszhn bhmei squih nimnx hsead shqmr udquq uaqeu iisqe jshnj oihyy snaxs hqihe lsilu ymhni tyz";
-               System.out.println(toDecode);
+               decode(toDecode);
                break;
 
            default:

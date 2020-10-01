@@ -1,44 +1,37 @@
+/* 
+   This program is a decrypter that takes in an argument, 
+   an existing plain-text phrase and returns encrypted messages.
+*/
 import java.util.Scanner;
 
 
 public class lab1 {
 
     /*
-    * insert java doc here
+    * This method takes in a msg String and prints out the decoded msg.
     */
-   public static String printArray(String[] array)
-   {
-       String printedArr = "";
-       for(int i = 0; i < array.length; i++)
-       {
-           printedArr = printedArr.concat(array[i]);
-       }
-
-       return printedArr;
-   }
    
    public static void decode(String msg) {
-       char[] encodedArray = msg.toCharArray();
-       char[] decodeArray = new char[encodedArray.length];
-       int intChar;
-       int a = 97; //ascii of 'a'
-       // this is to get the integer value of the character and store it.
+       char[] encodedArray = msg.toCharArray(); //puts msg from parameter to a char array 
+       char[] decodeArray = new char[encodedArray.length]; //made a new char array to input the decoded msg.
+       int intChar; //used to get integer value of character and store it
+       int a = 97; //ascii of 'a' value 
 
-       for (int i = 0; i < 26; i++) // iterating through the alphabet
+       for (int i = 0; i < 26; i++) // iterating through the alphabet 
        {
-           for (int k = 0; k < decodeArray.length; k++) // iterating through the array
+           for (int k = 0; k < encodedArray.length; k++) // iterating through the charArray
            {
 
-               if (encodedArray[k] != ' ') {
-                    intChar = encodedArray[k];
-                    intChar = (intChar - a + i) % 26 + a;
-                    decodeArray[k] = (char)intChar;
+               if (encodedArray[k] != ' ') {   //if the element in index k is not a space 
+                    intChar = encodedArray[k];  //store the value of the element 
+                    intChar = (intChar - a + i) % 26 + a;  //use this formula to figure out the correct decoded msg from the element at index k for the alphabet at index i
+                    decodeArray[k] = (char)intChar; //finally add the char of the integer value to the new decoded array
 
                } else {
-                   decodeArray[k] = ' ';
+                   decodeArray[k] = ' '; //if not an element in index k, it is a space 
                }
            }
-           System.out.println(new String(decodeArray) + "\n");
+           System.out.println(new String(decodeArray) + "\n"); //prints out array in form of a string instead of iterating through each value of array to print it out 
        }
 
    }
@@ -46,17 +39,12 @@ public class lab1 {
    public static void main(String[] args) {
        Scanner scan = new Scanner(System.in); // scanner for input from user
        int input; // input from user for Question we want to do
-       String toDecode;
+       String toDecode; //msg to decode 
 
-       // boolean exit = false; //dont want to exit yet
        System.out.println("Which Q. did you want to do? (1-4)");
-       input = scan.nextInt();
+       input = scan.nextInt(); //takes users input
 
-       // String test[] = {"hello", "one", "three"}; //used to test method below
-       // toDecode = printArray(test);
-       // System.out.println(toDecode);
-
-       switch (input) {
+       switch (input) { //switch statement for easy change of inputs 
            case 1:
                toDecode = "fqjcb rwjwj vnjax bnkhj whxcq nawjv nfxdu mbvnu ujbbf nnc";
                decode(toDecode);
@@ -82,16 +70,8 @@ public class lab1 {
                break;
 
        }
-       // System.out.println("Would you like to do another question? (Y for yes and N
-       // for no)");
 
-       // have output to see which one to decypher.
-       // arrays for each cyper
-       // cipher sub for #1 and 2
-       // then do the bottom 3
-       // then go back to #3 and 4
-       //ello
-       scan.close();
+       scan.close(); //close scanner to prevent mem leak
 
    }
 }

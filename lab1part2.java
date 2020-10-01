@@ -15,9 +15,8 @@ public class lab1part2 {
     public static void encode(String plainText, String modifiedAlphabet)
     {   
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
-        StringBuilder tempString = new StringBuilder(plainText);
+        StringBuilder tempString = new StringBuilder(plainText); 
 
-        //System.out.println(plainText.length());
         for (int i = 0; i < plainText.length(); i++)
         {
             char temp = plainText.charAt(i); //get the plainText letters at each i
@@ -37,9 +36,8 @@ public class lab1part2 {
 
     public static void main(String[] args)
     {   
-        String alphabet =         "abcdefghijklmnopqrstuvwxyz";
-        String modifiedAlphabet = "zyxwvutsrqponmlkjihgfedcba";
-        //int alphabetKey = getKey(alphabet);
+        String modifiedAlphabet = "zyxwvutsrqponmlkjihgfedcba"; 
+
         Scanner scan = new Scanner(System.in);
         System.out.println("Please tell me what you want to encrypt. 1 - 3");
         int input = scan.nextInt();
@@ -60,7 +58,6 @@ public class lab1part2 {
                 encode(plainText3.toLowerCase().replaceAll("\\p{Punct}", ""), modifiedAlphabet);
                 break;
  
-
             default:
                 System.out.println("Wrong input please try again");
                 break;

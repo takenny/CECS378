@@ -1,4 +1,5 @@
-/* This program is a Simple-Substitution decrypter that takes in two arguments, 
+/* 
+   This program is a Simple-Substitution decrypter that takes in two arguments, 
    an encrypted message and a key in the form of a modified alphabet.
    This program returns the plain-text phrase.
 */

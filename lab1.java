@@ -2,6 +2,7 @@
    This program is a decrypter that takes in an argument, 
    an existing plain-text phrase and returns encrypted messages.
 */
+import java.util.String;
 import java.util.Scanner;
 
 

@@ -1,0 +1,14 @@
+
+public class fuck {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String alphabet = "abcdefghijklmnopqrstuvwxyz";
+		String key = "sherlockaxzfgijdbpqtuvwnmy";
+		char[] encodedArray = key.toCharArray(); //puts msg from parameter to a char array 
+	    char[] decodeArray = new char[encodedArray.length];
+		
+		int difference = 
+	}
+
+}
